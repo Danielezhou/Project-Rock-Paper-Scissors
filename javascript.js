@@ -13,11 +13,12 @@ function getComputerChoice () {
     let choice = ["rock", "paper", "scissors"]
     return choice[Math.floor(Math.random()*choice.length)];
 }
-
 const computerSelection = getComputerChoice();
 const playerSelection = "rock";
 
 function round (playerSelection, computerSelection){
+    computerSelection = getComputerChoice();
+    playerSelection = prompt("rock, paper, scissors").toLowerCase();
     if (playerSelection === computerSelection){
         alert ("It's a tie");
         return "It's a tie";
@@ -28,12 +29,18 @@ function round (playerSelection, computerSelection){
     }
     else if(playerSelection === "rock" && computerSelection === "scissors" || playerSelection === "paper" && computerSelection === "rock" || playerSelection === "scissors" && computerSelection === "paper"){
         alert("You Win!");
-        return "You Win";
+        return ;
     }
     else {
         alert(Error);
-        return 1;
+        return -1;
     }
 }
-console.log(round(playerSelection, computerSelection));
 
+function game() {
+    for (let i = 0; i < 5; i++){
+        round(playerSelection,computerSelection);
+    }
+}
+
+console.log(game());
