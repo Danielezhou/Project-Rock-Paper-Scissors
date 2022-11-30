@@ -12,28 +12,28 @@ return a string to declare winner "You lose!" || "you lost"
 function getComputerChoice () {
     let choice = ["rock", "paper", "scissors"]
     return choice[Math.floor(Math.random()*choice.length)];
-
 }
 
-const playerSelection = "rock";
 const computerSelection = getComputerChoice();
+const playerSelection = "rock";
 
 function round (playerSelection, computerSelection){
-    playerSelection.toLowerCase;
     if (playerSelection === computerSelection){
+        alert ("It's a tie");
         return "It's a tie";
     }
-    else if (playerSelection == "rock" && computerSelection == "paper" || playerSelection == "paper" && computerSelection == "scissors" || playerSelection == "scissors" && computerSelection == "rock"){
-        return "You Lose!";
+    else if (playerSelection === "rock" && computerSelection === "paper" || playerSelection === "paper" && computerSelection === "scissors" || playerSelection === "scissors" && computerSelection === "rock"){
+        alert ("You Lose!");
+        return "You Lose";
     }
-    else {
+    else if(playerSelection === "rock" && computerSelection === "scissors" || playerSelection === "paper" && computerSelection === "rock" || playerSelection === "scissors" && computerSelection === "paper"){
+        alert("You Win!");
         return "You Win";
     }
-}
-
-function game (){
-    for (let i = 0; i < 5; i++){
-        console.log(round());
+    else {
+        alert(Error);
+        return 1;
     }
 }
+console.log(round(playerSelection, computerSelection));
 
