@@ -10,7 +10,30 @@ return a string to declare winner "You lose!" || "you lost"
 */
 
 function getComputerChoice () {
-    let choice = ["Rock", "Paper", "Scissors"]
+    let choice = ["rock", "paper", "scissors"]
     return choice[Math.floor(Math.random()*choice.length)];
 
 }
+
+const playerSelection = "rock";
+const computerSelection = getComputerChoice();
+
+function round (playerSelection, computerSelection){
+    playerSelection.toLowerCase;
+    if (playerSelection === computerSelection){
+        return "It's a tie";
+    }
+    else if (playerSelection == "rock" && computerSelection == "paper" || playerSelection == "paper" && computerSelection == "scissors" || playerSelection == "scissors" && computerSelection == "rock"){
+        return "You Lose!";
+    }
+    else {
+        return "You Win";
+    }
+}
+
+function game (){
+    for (let i = 0; i < 5; i++){
+        console.log(round());
+    }
+}
+
